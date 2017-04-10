@@ -1,61 +1,60 @@
 <?php
+defined('BASEPATH') OR exit('No direct script access allowed');
 class Pages extends CI_Controller
 {
-	public function __construct()
-	{
-		parent::__construct();
-		$this->load->helper('url_helper');
-		$this->load->model('Pages_model');
-		$this->load->helper('html');
-	}
-	
-	public function index()
-	{
-		$page = 'home';
-		$data['title'] = ucfirst($page); // Capitalize the first letter
-		
-		$this->load->view('templates/header', $data);
-		$this->load->view('pages/'.$page, $data);
-		$this->load->view('templates/footer', $data);
-	}
 
-    public function view($page = NULL)
-    {
-		$data['title'] = ucfirst($page); // Capitalize the first letter
-			
-		if($page == 'chapters')
-		{
-			$data['chapters'] = $this->Pages_model->get_chapters();
-			$data['title'] = 'Chapters';
-			$data['sections'] = $this->Pages_model->get_sections();
-		}
-		
-		
-		$this->load->view('templates/header', $data);
-		$this->load->view('pages/' . $page, $data);
-		$this->load->view('templates/footer', $data);
+  public function __construct()
+  {
+    parent::__construct();
+    $this->load->view('Templates/header.php');
+    $this->load->helper('url_helper');
+    $this->load->library('session');
+    $this->load->helper('form');
+    $this->load->model('Pages_Model');
+  }
+  public function index()
+  {
+    $page = 'home';
+    $data['title'] = ucfirst($page); // Capitalize the first letter
+
+    $this->load->view($page, $data);
+
+
+  }
+  /*Display Chapter for SideNav*/
+  public function DisplayChapters()
+  {
+    $data['chapters']=	$this->Pages_Model->getChapters();
+    $data['defaultChapter'] = $data['chapters'][0];
+
+    for($i = 0;$i< count($data['chapters']);$i++){
+      $data['chapters'][$i]['sections'] = $this->Pages_Model->getSectionsByChapter($data['chapters'][$i]['id']);
     }
-	
-	public function chapters($num)
-	{
-		$data['sections'] = $this->Pages_model->get_chapters($num);
-		$data['title'] = "Chapter " . $num;
-	
-		$this->load->view('templates/header', $data);
-		$this->load->view('pages/view', $data);
-		$this->load->view('templates/footer');
-	}
-	
-	public function section($title)
-	{
-		$title = urldecode($title);
-		$data['chapters'] = $this->Pages_model->get_chapters();
-		$data['sections'] = $this->Pages_model->get_sections();
-		$data['requestedsection'] = $this->Pages_model->get_section($title);
-		$data['title'] = "Chapter " . $data['requestedsection']['SEC_CNUM'] . " - " . $title;
-	
-		$this->load->view('templates/header', $data);
-		$this->load->view('pages/view', $data);
-		$this->load->view('templates/footer');
-	}
+    $data['defaultSection'] = $data['chapters'][0]['sections'][0];
+    $this->load->view("Templates/view", $data);
+  }//DisplayChapters
+
+  /*When Clicking Section in SideNav
+  Displays Specified Section*/
+  public function section($title)
+  {
+    $data['chapters'] = $this->Pages_Model->getChapters();
+
+    for($i = 0;$i< count($data['chapters']);$i++)
+    {
+      $data['chapters'][$i]['sections'] = $this->Pages_Model->getSectionsByChapter($data['chapters'][$i]['id']);
+    }
+    $data['requestedsection'] = $this->Pages_Model->getSectionByTitle($title);
+    $title = urldecode($title);
+    $data['title'] =  $title;
+    $this->load->view('Templates/view', $data);
+
+  }
+
+
+
+
+
+
+
 }
