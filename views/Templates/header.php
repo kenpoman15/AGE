@@ -1,5 +1,6 @@
-<!DOCTYPE html>
-<html>
+<?php
+?><html>
+
 <head>
 
   <meta charset="utf-8">
@@ -43,14 +44,17 @@
           <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
         </li>
 
-<?php if(!isset($_SESSION['User'])) { ?>
+<?php if(!isset($_SESSION['username']) && $_SESSION['privilege'] == 1 || $_SESSION['privilege'] == 2) { ?>
 
-          <li class="active"><a href="<?php echo site_url('users'); ?>">Login</span></a></li>
+          <li class="active"><a href="<?php echo site_url('users/login'); ?>">Login</span></a></li>
           <?php
         }
       else
         { ?>
-          <li class="active"><a href="<?php echo site_url('users/logout'); ?>">Logout</span></a></li>
+          <li><a href="<?php echo site_url('pages/createChapter'); ?>">Create Chapter</span></a></li>
+          <li><a href="<?php echo site_url('pages/createSection'); ?>">Create Section</span></a></li>
+          <li><a href="<?php echo site_url('users/logout'); ?>">Logout</span></a></li>
+
           <?php } ?>
         </ul>
       </div><!-- /.navbar-collapse -->

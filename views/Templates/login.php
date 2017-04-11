@@ -21,7 +21,7 @@
                    </td>
 
               </tr>
-            
+
               </table>
               <input type="submit" name="submit" onclick="validate()"value="Log In" />
               </form>

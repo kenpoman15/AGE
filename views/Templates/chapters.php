@@ -10,6 +10,8 @@ foreach($chapters as $chapter){
 		if($section['Ch_id'] = $chapter['id']){
 			$tag = $section['header'];
 			/*clickable link to Section Info*/
+       //$tag= str_replace(' ', '', $section['header']);//removes whitespace for proper URL
+
 			$link = site_url('pages/section/'.urldecode($section['header']));
 				echo "<p><a style='color: #06F;' href='$link'>$tag</a></p>";
 		}
