@@ -10,6 +10,7 @@ class Admin extends CI_Controller
       $this->load->view('Templates/header.php');
       $this->load->helper('url_helper');
       $this->load->model('Pages_Model');
+      $this->load->model('Admin_Model');
   }
   
   public function editSection($title)
@@ -23,5 +24,13 @@ class Admin extends CI_Controller
     }
     $data['requestedsection'] = $this->Pages_Model->getSectionByTitle($title);
     $this->load->view("Templates/edit", $data);
+  }
+  
+  public function updateSection()
+  {
+    $section = $_POST;
+    $section = $this->Admin_Model->putSection($section);
+    
+    $this->load->view("home");
   }
 }
