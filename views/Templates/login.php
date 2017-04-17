@@ -9,14 +9,14 @@
                   <td>
                         <label for="username">Username:</label>
                   </td><td>
-                        <input type="input" name="username" />
+                        <input class="textfield" type="input" name="username" />
                   </td>
             </tr>
             <tr>
                   <td>
                         <label for="password" style="padding-right: 4px;">Password:</label>
                    </td><td>
-                        <input type="password" name="password">
+                        <input class="textfield" type="password" name="password">
                    </td>
                   </tr>
 
