@@ -1,7 +1,15 @@
 <html>
-<a href="<?php echo site_url();?>"><header >
-  <li style="padding-top:18%">
 
+<script>
+function target_popup(form) {
+    window.open('', 'formpopup', 'width=200,height=200,resizeable,scrollbars');
+    form.target = 'formpopup';
+}
+</script>
+
+<a href="<?php echo site_url('users/popUp/uploadForm.php'); ?>" onclick="target_popup(this)"><header >
+
+  <li style="padding-top:18%">
     <div id="google_translate_element" align='right'></div>
     <script type="text/javascript">
     function googleTranslateElementInit() {
@@ -23,6 +31,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <!-- <script type="text/javascript" src="<?php echo base_url();?>assests/fgScript.js" ></script> -->
   <script>
+
   function Reload(){ location.reload(true); }
   </script>
 <nav class="navbar navbar-default">

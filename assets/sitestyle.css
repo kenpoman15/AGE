@@ -103,6 +103,7 @@ button.accordion {
 }
 button.header{
   height: 300px;
+  width:700px;
   /*padding: 20px 0 65px 0;*/
   background: #6D91FF 50% 0 no-repeat; /* old IE fallback */
   background-attachment: scroll;
