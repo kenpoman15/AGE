@@ -7,6 +7,7 @@ class Users extends CI_Controller
     parent::__construct();
 
     $this->load->library('session');
+    $this->load->library('encryption');
     $this->load->helper('url_helper');
     $this->load->helper('form');
     $this->load->model('User_Model');
@@ -34,6 +35,7 @@ class Users extends CI_Controller
     } else {
       $username = $this->input->post('username');
       $password = $this->input->post('password');
+
       $Verify =	$this->User_Model->Verify($username,$password); 	//Verify w/ Verify function in Login model
       if($Verify == TRUE){
         redirect(site_url());//redirect to home after verification
@@ -46,8 +48,10 @@ class Users extends CI_Controller
     }
   }//login
   public function logout(){
+    session_unset(); 
     $this->session->sess_destroy();
-    $this->load->view('Templates/header.php');
+
+  $this->load->view('Templates/header.php');
     $this->load->view("home");
     $this->load->view('Templates/footer.php');
   }
@@ -61,11 +65,16 @@ class Users extends CI_Controller
 
   public function sendUser()
   {
-    $user = $_POST;
-    $user = $this->User_Model->insertUser($user);
+    $this->load->library('form_validation');
+    $data['title'] = 'Login';
 
-    $this->load->view("Templates/header.php");
-    $this->load->view("home");
-    $this->load->view('Templates/footer.php');
+    $user = $_POST;
+
+      $user = $this->User_Model->insertUser($user);
+
+      $this->load->view("Templates/header.php");
+      $this->load->view("home");
+      $this->load->view('Templates/footer.php');
+
   }
 }

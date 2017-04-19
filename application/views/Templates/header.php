@@ -43,20 +43,25 @@
       <ul class="nav navbar-nav navbar-right">
 
 
-<?php if(!isset($_SESSION['username'])) {
+<?php if(!isset($_SESSION['username']))
+ {
           $_SESSION['privilege'] = 3;
           ?>
-
           <li class="active"><a href="<?php echo site_url('users/login'); ?>">Login</span></a></li>
           <?php
-        } else if(isset($_SESSION['username']) && $_SESSION['privilege'] == 1 || $_SESSION['privilege'] == 2) { ?>
+        } else if(isset($_SESSION['username']) && $_SESSION['privilege'] == 1)
+          {?>
           <li><a href="<?php echo site_url('pages/createChapter'); ?>">Create Chapter</span></a></li>
           <li><a href="<?php echo site_url('pages/createSection'); ?>">Create Section</span></a></li>
-          <?php if($_SESSION['privilege'] == 1) { ?>
-          <li><a href="<?php echo site_url('users/createUser'); ?>">Create User Account</span></a></li>
-          <?php } ?>
-          <li><a href="<?php echo site_url('users/logout'); ?>">Logout</span></a></li>
-        <?php } ?>
+            <li><a href="<?php echo site_url('users/createUser'); ?>">Create User Account</span></a></li>
+            <li><a href="<?php echo site_url('users/logout'); ?>">Logout</span></a></li>
+          <?php
+        } else if(isset($_SESSION['username']) && $_SESSION['privilege'] == 2 || $_SESSION['privilege'] == 3 ) {?>
+          <li><a href="<?php echo site_url('pages/createChapter'); ?>">Create Chapter</span></a></li>
+          <li><a href="<?php echo site_url('pages/createSection'); ?>">Create Section</span></a></li>
+            <li><a href="<?php echo site_url('users/logout'); ?>">Logout</span></a></li>
+
+        <?php }?>
 
         </ul>
 
