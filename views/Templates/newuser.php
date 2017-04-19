@@ -1,4 +1,4 @@
-    <div id="mainContent" style="margin-left: 20%;">
+<div id="mainContent" style="margin-left: 20%;">
         <form id="newrecord" action="<?php echo site_url('users/sendUser')?>" method="post">
             <fieldset id="usercontainer">
             <table>
@@ -14,7 +14,7 @@
                <tr>
                   <td><label>Username:</label></td>
                   <td><input class="textfield" type="text" name="un" required></td>
-               </tr>   
+               </tr>
                <tr>
                   <td><label>Password:</label></td>
                   <td><input class="textfield" type="text" name="pw" required></td>
@@ -25,7 +25,7 @@
                </tr>
                <tr>
                   <td><label>Privilege:</label></td>
-                  <td><select style="float: right; width: 15%;" name="priv">
+                  <td><select style="float: right" name="priv">
                         <option value=1>Level 1</option>
                         <option value=2>Level 2</option>
                         <option value=3 selected='selected'>Level 3</option>
@@ -39,4 +39,5 @@
             </table>
             </fieldset>
         </form>
-    </div>
+
+</div>

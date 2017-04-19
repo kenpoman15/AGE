@@ -13,16 +13,15 @@
 				plugins: "image",
 				menubar: "edit format insert",
 				toolbar: "undo redo | bold italic | alignleft aligncenter alignright alignjustify | indent outdent | image",
-
 				//images_upload_base_path: 'img'
 				image_advtab: true,
 				file_picker_callback: function(callback, value, meta)
-				{	
+				{
 					if (meta.filetype == 'image')
 					{
 						var input = document.getElementById('imageUpload');
 						input.click();
-						
+
 						input.onchange = function()
 						{
 							var file = this.files[0];
@@ -44,7 +43,7 @@
             <table>
             <tbody>
                <tr>
-									<input type="hidden" name="sectionID" value="<?php echo $requestedsection['id']; ?>"> 
+									<input type="hidden" name="sectionID" value="<?php echo $requestedsection['id']; ?>">
                   <td><label>Section Header:</label></td>
                   <td><input type="text" name="sectionheader" value="<?php echo $requestedsection['header'];?>" required> </td>
                </tr>
@@ -60,7 +59,6 @@
                     //Query the chapters
                     $result = $this->db->query("SELECT * FROM Chapters;");
                     $result = $result->result_array();
-
                     for($index = 0; $index < sizeof($result); $index++)
                     {
                         $CHN = $result[$index]['id'];
@@ -83,5 +81,5 @@
             </table>
             </fieldset>
             </form>
-    </center>    
+    </center>
 </div>

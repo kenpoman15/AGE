@@ -56,17 +56,14 @@
                   <td><label>Related Chapter:</label></td>
                   <?php
                     $string = "<td><select style='float: right; width: 25%;'form='newsection' name='relatedchapternum'>";
-
                     //Query the chapters
                     $result = $this->db->query("SELECT * FROM Chapters;");
                     $result = $result->result_array();
-
                     for($index = 0; $index < sizeof($result); $index++)
                     {
                         $CHN = $result[$index]['id'];
                         $string .= "<option value=$CHN>Chapter $CHN</option>";
                     }
-
                     $string .= "</td>";
                     echo $string;
                   ?>
