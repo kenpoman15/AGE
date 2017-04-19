@@ -20,6 +20,11 @@
       <button onclick="location.href='<?php echo site_url("Admin/editSection/$title");?>'">Edit Section</button><?php
     } ?>
   </div>
+  <div id="DelBtn">
+    <?php if(isset($_SESSION['username'])) { ?>
+      <button onclick="location.href='#'">Delete Section</button><?php
+    } ?>
+  </div>
 
 </div>
  <!-- End info Div, contains all info for requested section-->

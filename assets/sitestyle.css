@@ -209,6 +209,12 @@ display:block; }
     padding-top: 20px;
     float:right;
 }
+#DelBtn{
+  clear:left;
+  padding-top: 20px;
+  padding-right: 5px;
+  float:right;
+}
 #search
 {
     margin: 4px 5px 4px 5px;
