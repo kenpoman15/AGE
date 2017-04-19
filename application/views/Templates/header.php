@@ -1,15 +1,17 @@
 <html>
-<header>
+<a href="<?php echo site_url();?>"><header >
   <li style="padding-top:18%">
+
     <div id="google_translate_element" align='right'></div>
     <script type="text/javascript">
     function googleTranslateElementInit() {
       new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
     }
     </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
   </li>
-</header>
+</header></a>
 <body>
   <meta charset="utf-8">
 
@@ -20,7 +22,9 @@
   <!--Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <!-- <script type="text/javascript" src="<?php echo base_url();?>assests/fgScript.js" ></script> -->
-
+  <script>
+  function Reload(){ location.reload(true); }
+  </script>
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->

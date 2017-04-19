@@ -48,12 +48,12 @@ class Users extends CI_Controller
     }
   }//login
   public function logout(){
-    session_unset(); 
+    session_unset();
     $this->session->sess_destroy();
-
-  $this->load->view('Templates/header.php');
-    $this->load->view("home");
-    $this->load->view('Templates/footer.php');
+    redirect(site_url());
+  // $this->load->view('Templates/header.php');
+  //   $this->load->view("home");
+  //   $this->load->view('Templates/footer.php');
   }
 
   public function createUser()
