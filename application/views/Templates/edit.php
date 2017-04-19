@@ -49,8 +49,8 @@
                </tr>
                <tr>
                   <td><label>Section Text:</label></td>
-                  <td><input id='sectiontext' type="text" name="sectiontext" value='<?php echo $requestedsection['content'];?>'></td>
-									<td><input id='imageUpload' name="image" type="file" onchange="" style="display: none;"></td>
+                  <td><input style="height:300px" id='sectiontext' type="text" name="sectiontext" value='<?php echo $requestedsection['content'];?>'></td>
+		<td><input id='imageUpload' name="image" type="file" onchange="" style="display: none;"></td>
                </tr>
                <tr>
                   <td><label>Related Chapter:</label></td>
