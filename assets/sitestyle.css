@@ -17,8 +17,6 @@ body{
   text-align: center;
   width:auto;
   padding: 20px;
-  background-color: #black;
- /*background: #fff;*/
  font-family: 'Libre Baskerville',sans-serif;
  font-size: 70%;
  background-image: url("https://scontent-ort2-1.cdninstagram.com/t51.2885-15/e35/15046984_213499152409278_8097457935145238528_n.jpg");
@@ -28,13 +26,15 @@ body{
 }
 footer
 {
- margin-top:5%;
- padding-top:10%;
-	background-color: #F0F;
+	background-color: #e7e7e7;
 	clear: both;
 	width: 100%;
-	height: 5%;
+	height: 10%;
+  padding-top:1em;
+    border: 1px solid #e7e7e7;
+    border-radius: 5px;
 }
+
 label {
     display:block;
     margin-top:20px;
@@ -158,15 +158,16 @@ display:block; }
 
 #mainContent
 {
-  width: 700px ;
+  /*//width: 700px ;*/
     margin-left: auto ;
     margin-right: auto ;
+    margin-bottom: 20px;
 	width: 70%;
-    padding:20px 1% 10% 1%;
+    padding:20px 1% 5% 1%;
    /*border-color:#E8C421;*/
     background-color: #46E8B6;
     background-color: #ffffff;
-    border: 1px solid black;
+    border-radius: 5px;
     opacity: 0.9;
     text-align: center;
     font-size: 1em;
@@ -180,7 +181,7 @@ display:block; }
 	width: 14%;
 	padding: 0 1% 2.5% 1%;
   background: #edf4f0;
-  border: 1px solid black;
+  border-radius: 5px;
     /*border-bottom: 1px solid black;
     border-left: 1px solid black;*/
 
