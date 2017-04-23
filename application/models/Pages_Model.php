@@ -39,7 +39,7 @@ class Pages_Model extends CI_Model
     public function putSection($section)
     {
       //Section: id, header, content, parent chapter;
-      $query = "INSERT INTO Sections (`id`, `header`, `content`, ` Ch_id`) VALUES ('', '$section[sectionheader]', '$section[sectiontext]', '$section[relatedchapternum]');";
+      $query = "INSERT INTO Sections (`id`, `header`, `content`, `Ch_id`) VALUES ('', '$section[sectionheader]', '$section[sectiontext]', '$section[relatedchapternum]');";
       $result =  $this->db->query($query);
         return $result;
       unset($section);

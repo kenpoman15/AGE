@@ -6,6 +6,10 @@ foreach($chapters as $chapter){
 	<button class="accordion"><?php echo "<h4>". $chapter['id'] . ":\t".$chapter['title']. "</h4>";?></button>
 	<div class="panel">
 	<?php
+	if( $_SESSION['privilege'] == 2 || $_SESSION['privilege'] == 1 ) {
+		$editlink = site_url('admin/editChapter/' . $chapter['id']);
+		echo "<p><a href='$editlink'>Edit Chapter $chapter[id]</a></p>";	
+	}
 	foreach($chapter['sections'] as $section){
 		if($section['Ch_id'] = $chapter['id'])
 		{
