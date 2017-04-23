@@ -2,11 +2,13 @@
 header {
   height: 300px;
   /*padding: 20px 0 65px 0;*/
-  background: #6D91FF 50% 0 url(huntington.jpg) no-repeat; /* old IE fallback */
+  background: #6D91FF 50% 0 no-repeat; /* old IE fallback */
   background-attachment: scroll;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0,0,0,.5)), url("http://localhost/FG_Template/images/river.jpg");
   background-position: 50% 0px;
   background-repeat: no-repeat;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
   background-size:cover;
   text-align: center;
   overflow: hidden;
@@ -22,7 +24,7 @@ body{
  background-image: url("https://scontent-ort2-1.cdninstagram.com/t51.2885-15/e35/15046984_213499152409278_8097457935145238528_n.jpg");
  background-position: 0 0;
  background-repeat:repeat;
- background-size: auto, auto, auto, cover;
+ background-size: cover;
 }
 footer
 {
@@ -99,6 +101,21 @@ button.accordion {
    outline: none;
    transition: 0.4s;
 }
+button.header{
+  height: 300px;
+  width:700px;
+  /*padding: 20px 0 65px 0;*/
+  background: #6D91FF 50% 0 no-repeat; /* old IE fallback */
+  background-attachment: scroll;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0,0,0,.5)), url("http://localhost/FG_Template/images/river.jpg");
+  background-position: 50% 0px;
+  background-repeat: no-repeat;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background-size:cover;
+  text-align: center;
+  overflow: hidden;
+}
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
 button.accordion.active, button.accordion:hover {
@@ -107,6 +124,7 @@ button.accordion.active, button.accordion:hover {
 
 /* Style the accordion panel. Note: hidden by default */
 div.panel {
+  border-radius: 5px;
   padding: 0 18px;
    background-color: white;
   display:none;
@@ -162,7 +180,7 @@ display:block; }
     margin-left: auto ;
     margin-right: auto ;
     margin-bottom: 20px;
-	width: 70%;
+	  width: 70%;
     padding:20px 1% 5% 1%;
    /*border-color:#E8C421;*/
     background-color: #46E8B6;
@@ -172,7 +190,7 @@ display:block; }
     text-align: center;
     font-size: 1em;
     font-family: 'serif','Times new Roman', Georgia;
-    font-size: 90%;
+    /*font-size: 90%;*/
 }
 
 #chapternav
@@ -189,17 +207,15 @@ display:block; }
 #EditBtn
 {
     clear: both;
-    padding-top: 15px;
-    margin-right:20px;
+    padding-top: 20px;
     float:right;
 }
-#DeleteBtn
-{
-    display: block;
-    clear: both;
-    float:right;
+#DelBtn{
+  clear:left;
+  padding-top: 20px;
+  padding-right: 5px;
+  float:right;
 }
-
 #search
 {
     margin: 4px 5px 4px 5px;

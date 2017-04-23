@@ -4,6 +4,46 @@
   ?>
 </div> <!--end Chapter Navigation Div-->
 
+<?php if($edit == "chapter") {
+				for($index = 0; $index < sizeof($chapters); $index++)
+				{
+					if($chapters[$index]['id'] == $requestedchapter)
+						$thisChapter = $chapters[$index];
+				}
+?>
+<div id="mainContent">
+	<center>
+			<h1><?php echo $title; ?></h1>
+			<div id="createchapter">
+            <form id="newchapter" action="<?php echo site_url('admin/updateChapter')?>" method="post">
+            <fieldset id="updateChapterContainer">
+            <table>
+            <tbody>
+							<input type="hidden" name="oldchapnum" value="<?php echo $thisChapter['id']; ?>">
+               <tr>
+                  <td><label>Chapter Number:</label></td>
+                  <td><input class="textfield" type="text" name="chapternum" value="<?php echo $thisChapter['id']; ?>"required></td>
+               </tr>
+               <tr>
+                  <td><label>Chapter Title:</label></td>
+                  <td><input class="textfield" type="text" name="chaptertitle" value="<?php echo $thisChapter['title']; ?>"required></td>
+               </tr>
+               <tr>
+                  <td><label>Chapter Description:</label></td>
+                  <td><input class="textfield" type="text" name="chapterdesc" value="<?php echo $thisChapter['description']; ?>"required></td>
+               </tr>
+               <tr>
+                  <td></td>
+						<td><input style='float: right;' type="submit"  value="Go" name="submit"></td>
+               </tr>
+            </tbody>
+            </table>
+            </fieldset>
+            </form>
+         </div>
+		  </center>
+</div>
+<?php } else if($edit == "section") { ?>
 <div id="mainContent">
     <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
 		<script>
@@ -49,7 +89,7 @@
                </tr>
                <tr>
                   <td><label>Section Text:</label></td>
-                  <td><input id='sectiontext' type="text" name="sectiontext" value='<?php echo $requestedsection['content'];?>'></td>
+                  <td><input style="height:300px"id='sectiontext' type="text" name="sectiontext" value='<?php echo $requestedsection['content'];?>'></td>
 									<td><input id='imageUpload' name="image" type="file" onchange="" style="display: none;"></td>
                </tr>
                <tr>
@@ -83,3 +123,4 @@
             </form>
     </center>
 </div>
+<?php } ?>

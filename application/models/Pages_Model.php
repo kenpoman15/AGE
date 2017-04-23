@@ -20,12 +20,6 @@ class Pages_Model extends CI_Model
       $query = $this->db->query($sql);
       return $query->result_array();
     }
-    
-    public function deleteSectionbyTitle($title){
-        $sql = "DELETE FROM `Sections` WHERE header = '$title'";
-        $query = $this->db->query($sql);
-      return "This section was deleted";
-    }
 
     public function getSectionByTitle($title){
       $sql = "SELECT * FROM `Sections` WHERE header = '$title'";
@@ -45,7 +39,7 @@ class Pages_Model extends CI_Model
     public function putSection($section)
     {
       //Section: id, header, content, parent chapter;
-      $query = "INSERT INTO Sections (`id`, `header`, `content`, ` Ch_id`) VALUES ('', '$section[sectionheader]', '$section[sectiontext]', '$section[relatedchapternum]');";
+      $query = "INSERT INTO Sections (`id`, `header`, `content`, `Ch_id`) VALUES ('', '$section[sectionheader]', '$section[sectiontext]', '$section[relatedchapternum]');";
       $result =  $this->db->query($query);
         return $result;
       unset($section);

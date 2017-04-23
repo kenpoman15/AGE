@@ -6,6 +6,7 @@ class Pages extends CI_Controller
   {
       parent::__construct();
       $this->load->library('session');
+      $this->load->library('encryption');
         $this->load->view('Templates/header.php');
 
       $this->load->helper('form');
