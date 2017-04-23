@@ -1,14 +1,12 @@
 
 header {
-  height: 300px;
+   height: 300px;
   /*padding: 20px 0 65px 0;*/
-  background: #6D91FF 50% 0 no-repeat; /* old IE fallback */
+  background: #6D91FF 50% 0 url(huntington.jpg) no-repeat; /* old IE fallback */
   background-attachment: scroll;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0,0,0,.5)), url("http://localhost/FG_Template/images/river.jpg");
   background-position: 50% 0px;
   background-repeat: no-repeat;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
   background-size:cover;
   text-align: center;
   overflow: hidden;
@@ -19,24 +17,24 @@ body{
   text-align: center;
   width:auto;
   padding: 20px;
+  background-color: #black;
+ /*background: #fff;*/
  font-family: 'Libre Baskerville',sans-serif;
  font-size: 70%;
  background-image: url("https://scontent-ort2-1.cdninstagram.com/t51.2885-15/e35/15046984_213499152409278_8097457935145238528_n.jpg");
  background-position: 0 0;
  background-repeat:repeat;
- background-size: cover;
+ background-size: auto, auto, auto, cover;
 }
 footer
 {
-	background-color: #e7e7e7;
+   margin-top:5%;
+   padding: 2% 0 3% 0;
+   background-color: #bfbfbf;
 	clear: both;
 	width: 100%;
-	height: 10%;
-  padding-top:1em;
-    border: 1px solid #e7e7e7;
-    border-radius: 5px;
+	height: 5%;
 }
-
 label {
     display:block;
     margin-top:20px;
@@ -101,21 +99,6 @@ button.accordion {
    outline: none;
    transition: 0.4s;
 }
-button.header{
-  height: 300px;
-  width:700px;
-  /*padding: 20px 0 65px 0;*/
-  background: #6D91FF 50% 0 no-repeat; /* old IE fallback */
-  background-attachment: scroll;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0,0,0,.5)), url("http://localhost/FG_Template/images/river.jpg");
-  background-position: 50% 0px;
-  background-repeat: no-repeat;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  background-size:cover;
-  text-align: center;
-  overflow: hidden;
-}
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
 button.accordion.active, button.accordion:hover {
@@ -124,7 +107,6 @@ button.accordion.active, button.accordion:hover {
 
 /* Style the accordion panel. Note: hidden by default */
 div.panel {
-  border-radius: 5px;
   padding: 0 18px;
    background-color: white;
   display:none;
@@ -176,21 +158,20 @@ display:block; }
 
 #mainContent
 {
-  /*//width: 700px ;*/
+  width: 700px ;
     margin-left: auto ;
     margin-right: auto ;
-    margin-bottom: 20px;
-	  width: 70%;
-    padding:20px 1% 5% 1%;
+	width: 70%;
+    padding:20px 1% 10% 1%;
    /*border-color:#E8C421;*/
     background-color: #46E8B6;
     background-color: #ffffff;
-    border-radius: 5px;
+    border: 1px solid black;
     opacity: 0.9;
     text-align: center;
     font-size: 1em;
     font-family: 'serif','Times new Roman', Georgia;
-    /*font-size: 90%;*/
+    font-size: 90%;
 }
 
 #chapternav
@@ -199,23 +180,16 @@ display:block; }
 	width: 14%;
 	padding: 0 1% 2.5% 1%;
   background: #edf4f0;
-  border-radius: 5px;
-    /*border-bottom: 1px solid black;
-    border-left: 1px solid black;*/
-
+  border: 1px solid black;
 }
-#EditBtn
+
+#Btns
 {
     clear: both;
-    padding-top: 20px;
-    float:right;
+    padding-top: 50px;
+    float:left;
 }
-#DelBtn{
-  clear:left;
-  padding-top: 20px;
-  padding-right: 5px;
-  float:right;
-}
+
 #search
 {
     margin: 4px 5px 4px 5px;
@@ -225,12 +199,9 @@ display:block; }
   margin-left: auto;
   margin-right: auto;
   width:500px;
-
 }
 #updatesection{
   padding-top: 5%;
   margin-left: auto;
   margin-right: auto;
-  /*width:500px;*/
-
 }

@@ -37,6 +37,20 @@ class Admin extends CI_Controller
     $this->load->view('Templates/footer.php');
   }
   
+  public function deleteSection($title)
+  {
+       $title = urldecode($title);
+       $data['title'] = $title;
+       $data['chapters'] = $this->Pages_Model->getChapters();
+       for($i = 0;$i< count($data['chapters']);$i++)
+     {
+       $data['chapters'][$i]['sections'] = $this->Pages_Model->getSectionsByChapter($data['chapters'][$i]['id']);
+     }
+     $data['deletedsection'] = $this->Pages_Model->deleteSectionbyTitle($title);
+     $this->load->view("home", $data);
+     $this->load->view('Templates/footer.php');
+  }
+  
   public function editChapter($chap)
   {
     $data['requestedchapter'] = $chap;
