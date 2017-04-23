@@ -1,6 +1,6 @@
 
 header {
-  height: 300px;
+   height: 300px;
   /*padding: 20px 0 65px 0;*/
   background: #6D91FF 50% 0 url(huntington.jpg) no-repeat; /* old IE fallback */
   background-attachment: scroll;
@@ -188,8 +188,14 @@ display:block; }
 #EditBtn
 {
     clear: both;
-    padding-top: 20px;
-    float:right;
+    padding-top: 50px;
+    float:left;
+}
+
+#DeleteBtn
+{
+    float:left;
+    padding-bottom:100px;
 }
 #search
 {

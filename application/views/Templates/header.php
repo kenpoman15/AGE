@@ -1,14 +1,5 @@
 <html>
-
-<script>
-function target_popup(form) {
-    window.open('', 'formpopup', 'width=200,height=200,resizeable,scrollbars');
-    form.target = 'formpopup';
-}
-</script>
-
-<a href="<?php echo site_url('users/popUp/uploadForm.php'); ?>" onclick="target_popup(this)"><header >
-
+<header>
   <li style="padding-top:18%">
     <div id="google_translate_element" align='right'></div>
     <script type="text/javascript">
@@ -16,10 +7,9 @@ function target_popup(form) {
       new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
     }
     </script>
-  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
   </li>
-</header></a>
+</header>
 <body>
   <meta charset="utf-8">
 
@@ -30,10 +20,7 @@ function target_popup(form) {
   <!--Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <!-- <script type="text/javascript" src="<?php echo base_url();?>assests/fgScript.js" ></script> -->
-  <script>
 
-  function Reload(){ location.reload(true); }
-  </script>
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -56,25 +43,20 @@ function target_popup(form) {
       <ul class="nav navbar-nav navbar-right">
 
 
-<?php if(!isset($_SESSION['username']))
- {
+<?php if(!isset($_SESSION['username'])) {
           $_SESSION['privilege'] = 3;
           ?>
+
           <li class="active"><a href="<?php echo site_url('users/login'); ?>">Login</span></a></li>
           <?php
-        } else if(isset($_SESSION['username']) && $_SESSION['privilege'] == 1)
-          {?>
+        } else if(isset($_SESSION['username']) && $_SESSION['privilege'] == 1 || $_SESSION['privilege'] == 2) { ?>
           <li><a href="<?php echo site_url('pages/createChapter'); ?>">Create Chapter</span></a></li>
           <li><a href="<?php echo site_url('pages/createSection'); ?>">Create Section</span></a></li>
-            <li><a href="<?php echo site_url('users/createUser'); ?>">Create User Account</span></a></li>
-            <li><a href="<?php echo site_url('users/logout'); ?>">Logout</span></a></li>
-          <?php
-        } else if(isset($_SESSION['username']) && $_SESSION['privilege'] == 2 || $_SESSION['privilege'] == 3 ) {?>
-          <li><a href="<?php echo site_url('pages/createChapter'); ?>">Create Chapter</span></a></li>
-          <li><a href="<?php echo site_url('pages/createSection'); ?>">Create Section</span></a></li>
-            <li><a href="<?php echo site_url('users/logout'); ?>">Logout</span></a></li>
-
-        <?php }?>
+          <?php if($_SESSION['privilege'] == 1) { ?>
+          <li><a href="<?php echo site_url('users/createUser'); ?>">Create User Account</span></a></li>
+          <?php } ?>
+          <li><a href="<?php echo site_url('users/logout'); ?>">Logout</span></a></li>
+        <?php } ?>
 
         </ul>
 

@@ -15,14 +15,15 @@
   <center>
   <p>  <?php echo (isset($requestedsection)) ? $requestedsection['content'] : $defaultSection['content']; ?></p>
   </center>
+
   <div id="EditBtn">
     <?php if(isset($_SESSION['username'])) { ?>
       <button onclick="location.href='<?php echo site_url("Admin/editSection/$title");?>'">Edit Section</button><?php
     } ?>
   </div>
-  <div id="DelBtn">
+<div id="DeleteBtn">
     <?php if(isset($_SESSION['username'])) { ?>
-      <button onclick="location.href='#'">Delete Section</button><?php
+      <button onclick="location.href='<?php echo site_url("Admin/DeleteSection/$title");?>'">Delete Section</button><?php
     } ?>
   </div>
 
