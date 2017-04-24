@@ -93,7 +93,7 @@ class Pages extends CI_Controller
     }
     $data['defaultSection'] = $data['chapters'][0]['sections'][0];
 
-    $this->load->view("Templates/home", $data);
+    $this->load->view("home", $data);
     $this->load->view('Templates/footer.php');
   }
 
@@ -109,7 +109,7 @@ class Pages extends CI_Controller
     }
     $data['defaultSection'] = $data['chapters'][0]['sections'][0];
 
-    $this->load->view("Templates/home", $data);
+    $this->load->view("home", $data);
     $this->load->view('Templates/footer.php');
   }
 }
