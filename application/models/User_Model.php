@@ -1,4 +1,11 @@
 <?php
+/*****************************************************************
+* Model       : User_Model
+* Project     :CS340 AGE Field Guide
+******************************************************************
+* Description :Holds Functions To verify and insert
+              Users into database
+*****************************************************************/
 class User_Model extends CI_Model
 {
     public function __construct()
@@ -6,6 +13,11 @@ class User_Model extends CI_Model
         $this->load->database();
         $this->load->library('session');
     }
+    
+    /*Compare User account info in Database on login
+  *   @param $username - user entered string
+  *   @param $password - password attached to username
+  *   @return boolean - returns TRUE if account can be verified*/
     public function Verify($username, $password)
     {
         $query = $this->db->get_where('Users', array('username' => $username));
@@ -19,6 +31,14 @@ class User_Model extends CI_Model
           return FALSE;
         }
     }
+    
+    /*
+  * Insert User to Database w/ hashed password
+  * @param $user - The array of user info to be inserted
+  *@return $result - returns true of query is valid
+  
+  
+  */
 
     public function insertUser($user)
     {
