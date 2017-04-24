@@ -101,4 +101,13 @@ class Pages extends CI_Controller
     $this->load->view("home", $data);
     $this->load->view('Templates/footer.php');
   }
+
+  // /*Sanitize String*/
+  //   function get_post($con, $var)
+  //   {
+  //     $result = string mysqli_real_escape_string ( $con , string $var);
+  //     //echo $var;
+  //     return $result;
+  //   }
 }
+?>

@@ -1,5 +1,6 @@
 
 header {
+  border-radius: 5px;
    height: 300px;
   /*padding: 20px 0 65px 0;*/
   background: #6D91FF 50% 0 url(huntington.jpg) no-repeat; /* old IE fallback */
@@ -30,7 +31,8 @@ footer
 {
    margin-top:5%;
    padding: 2% 0 3% 0;
-   background-color: #bfbfbf;
+   background-color: #e7e7e7;
+   border-radius: 5px;
 	clear: both;
 	width: 100%;
 	height: 5%;
@@ -158,6 +160,7 @@ display:block; }
 
 #mainContent
 {
+  border-radius: 5px;
   width: 700px ;
     margin-left: auto ;
     margin-right: auto ;
@@ -176,6 +179,7 @@ display:block; }
 
 #chapternav
 {
+  border-radius: 5px;
 	float: left;
 	width: 14%;
 	padding: 0 1% 2.5% 1%;
