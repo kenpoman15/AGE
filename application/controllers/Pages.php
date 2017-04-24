@@ -8,13 +8,10 @@ class Pages extends CI_Controller
       $this->load->library('session');
       $this->load->library('encryption');
         $this->load->view('Templates/header.php');
-
       $this->load->helper('form');
-
       $this->load->helper('url_helper');
       $this->load->model('Pages_Model');
   }
-
   public function index()
   {
     $page = 'home';
@@ -22,7 +19,6 @@ class Pages extends CI_Controller
     $this->load->view($page, $data);
     $this->load->view('Templates/footer.php');
   }
-
   /*Display Chapter for SideNav*/
   public function DisplayChapters()
   {
@@ -33,7 +29,6 @@ class Pages extends CI_Controller
     }
     $data['defaultSection'] = $data['chapters'][0]['sections'][0];
     $data['title'] = $data['chapters'][0]['sections'][0]['header'];
-
     $this->load->view("Templates/view", $data);
     $this->load->view('Templates/footer.php');
   }//DisplayChapters
@@ -51,7 +46,6 @@ class Pages extends CI_Controller
     }
     $data['defaultSection'] = $data['chapters'][0]['sections'][0];
     $data['requestedsection'] = $this->Pages_Model->getSectionByTitle($title);
-
     $this->load->view('Templates/view', $data);
     $this->load->view('Templates/footer.php');
   }
@@ -64,7 +58,6 @@ class Pages extends CI_Controller
     }
     $data['title'] = "Create a Chapter";
     $data['creation'] = "chapter";
-
     $this->load->view('Templates/create', $data);
     $this->load->view('Templates/footer.php');
   }
@@ -77,7 +70,6 @@ class Pages extends CI_Controller
     }
     $data['title'] = "Create a Section";
     $data['creation'] = "section";
-
     $this->load->view('Templates/create', $data);
     $this->load->view('Templates/footer.php');
   }
@@ -92,11 +84,9 @@ class Pages extends CI_Controller
       $data['chapters'][$i]['sections'] = $this->Pages_Model->getSectionsByChapter($data['chapters'][$i]['id']);
     }
     $data['defaultSection'] = $data['chapters'][0]['sections'][0];
-
     $this->load->view("home", $data);
     $this->load->view('Templates/footer.php');
   }
-
   public function sendSection()
   {
     $section = $_POST;
@@ -108,7 +98,6 @@ class Pages extends CI_Controller
       $data['chapters'][$i]['sections'] = $this->Pages_Model->getSectionsByChapter($data['chapters'][$i]['id']);
     }
     $data['defaultSection'] = $data['chapters'][0]['sections'][0];
-
     $this->load->view("home", $data);
     $this->load->view('Templates/footer.php');
   }
